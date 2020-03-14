@@ -7,7 +7,7 @@ public class Gato {
     private Double energia;
     private Double velocidad;
 
-    public Gato(String nombre, Integer energia, Integer velocidad) {
+    public Gato(String nombre) {
         this.nombre = nombre;
         this.energia = 0.0;
         this.velocidad = 5.0;
@@ -29,7 +29,12 @@ public class Gato {
         return cantidadDeMetros/this.velocidad;
     }
 
+    public Boolean meConvieneComerA(Raton unRaton, Integer unaDistancia){
+        return unRaton.getPeso() > energiaConsumida(unaDistancia);
+    }
 
-
+    private Double energiaConsumida(Integer metros){
+        return 0.5*metros;
+    }
 
 }
